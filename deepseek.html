@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voyager AI | Intelligent Travel Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.1.2/esm/ionicons.min.js">
+    <script src="https://unpkg.com/ionicons@7.1.2/dist/ionicons/ionicons.esm.js" type="module"></script>
+    <script src="https://unpkg.com/ionicons@7.1.2/dist/ionicons/ionicons.js" nomodule></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#1C2E4A',
+                        sky: '#4A90E2',
+                        gold: '#D4AF37',
+                        light: '#F9FAFB'
+                    },
+                    fontFamily: {
+                        atkinson: ['Atkinson Hyperlegible', 'sans-serif']
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Atkinson Hyperlegible', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1C2E4A 0%, #2a3e5f 100%);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .gold-hover:hover {
+            background-color: #e6c05a;
+            border-color: #e6c05a;
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            border-color: #D4AF37;
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .glow {
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .cta-gradient {
+            background: linear-gradient(135deg, #4A90E2 0%, #1C2E4A 100%);
+        }
+        
+        .nav-scrolled {
+            background: rgba(28, 46, 74, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-light text-navy font-atkinson">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 py-4" id="navbar">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="bg-sky w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                    <ion-icon name="compass" class="text-white text-xl"></ion-icon>
+                </div>
+                <span class="text-2xl font-bold text-navy">Voyager<span class="text-gold">AI</span></span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#features" class="text-navy hover:text-sky font-medium transition-colors">Features</a>
+                <a href="#how-it-works" class="text-navy hover:text-sky font-medium transition-colors">How It Works</a>
+                <a href="#testimonials" class="text-navy hover:text-sky font-medium transition-colors">Testimonials</a>
+                <a href="#pricing" class="text-navy hover:text-sky font-medium transition-colors">Pricing</a>
+            </div>
+            
+            <div>
+                <button class="bg-sky text-white px-6 py-2 rounded-full font-medium hover:bg-navy transition-colors shadow-md">
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-32 pb-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0 animate-on-scroll">
+                <h1 class="text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
+                    Luxury Travel, <br>
+                    <span class="text-gold">Intelligently</span> Curated
+                </h1>
+                <p class="text-xl text-sky-100 mb-8 max-w-lg">
+                    Voyager AI transforms your travel experiences with personalized, AI-powered recommendations and seamless planning for the discerning traveler.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button class="bg-gold text-navy px-8 py-4 rounded-full font-bold text-lg hover:bg-gold-600 transition-colors flex items-center justify-center glow">
+                        <span>Start Your Journey</span>
+                        <ion-icon name="arrow-forward" class="ml-2"></ion-icon>
+                    </button>
+                    <button class="border-2 border-gold text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-gold hover:text-navy transition-colors flex items-center justify-center">
+                        <ion-icon name="play-circle" class="mr-2"></ion-icon>
+                        <span>Watch Demo</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="md:w-1/2 flex justify-center animate-on-scroll">
+                <div class="relative">
+                    <div class="bg-white rounded-3xl shadow-2xl p-4 transform rotate-3">
+                        <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Travel App Interface" 
+                             class="rounded-2xl w-full max-w-md">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-gold text-navy px-6 py-3 rounded-full font-bold shadow-lg">
+                        <div class="flex items-center">
+                            <ion-icon name="sparkles" class="mr-2"></ion-icon>
+                            <span>AI Recommendations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-white" id="features">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-20 animate-on-scroll">
+                <h2 class="text-4xl font-bold text-navy mb-4">Elevate Your Travel Experience</h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Voyager AI combines artificial intelligence with luxury travel expertise to create unforgettable journeys tailored just for you.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-light rounded-2xl p-8 shadow-lg transition-all duration-300 animate-on-scroll">
+                    <div class="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mb-6">
+                        <ion-icon name="diamond" class="text-gold text-3xl"></ion-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-navy mb-4">Luxury Curation</h3>
+                    <p class="text-gray-600 mb-6">
+                        Access exclusive, handpicked luxury experiences that match your preferences and travel style.
+                    </p>
+                    <div class="flex">
+                        <span class="text-gold font-bold">Discover More</span>
+                        <ion-icon name="arrow-forward" class="text-gold ml-2"></ion-icon>
+                    </div>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card bg-light rounded-2xl p-8 shadow-lg transition-all duration-300 animate-on-scroll">
+                    <div class="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mb-6">
+                        <ion-icon name="globe" class="text-gold text-3xl"></ion-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-navy mb-4">Seamless Planning</h3>
+                    <p class="text-gray-600 mb-6">
+                        From flights to dinner reservations, our AI handles every detail with precision and care.
+                    </p>
+                    <div class="flex">
+                        <span class="text-gold font-bold">Discover More</span>
+                        <ion-icon name="arrow-forward" class="text-gold ml-2"></ion-icon>
+                    </div>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card bg-light rounded-2xl p-8 shadow-lg transition-all duration-300 animate-on-scroll">
+                    <div class="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mb-6">
+                        <ion-icon name="lock-closed" class="text-gold text-3xl"></ion-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-navy mb-4">Real-time Assistance</h3>
+                    <p class="text-gray-600 mb-6">
+                        24/7 AI concierge to handle changes, recommendations, and support during your travels.
+                    </p>
+                    <div class="flex">
+                        <span class="text-gold font-bold">Discover More</span>
+                        <ion-icon name="arrow-forward" class="text-gold ml-2"></ion-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-20 bg-navy text-white" id="how-it-works">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-20 animate-on-scroll">
+                <h2 class="text-4xl font-bold mb-4">Intelligent Travel, Simplified</h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-6"></div>
+                <p class="text-xl text-sky-200 max-w-2xl mx-auto">
+                    Experience the future of luxury travel planning with our sophisticated AI technology.
+                </p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 animate-on-scroll">
+                    <div class="bg-sky-900 rounded-3xl p-2 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="App interface" 
+                             class="rounded-2xl">
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 md:pl-12 animate-on-scroll">
+                    <div class="flex mb-8">
+                        <div class="mr-4">
+                            <div class="w-12 h-12 rounded-full bg-gold flex items-center justify-center text-navy font-bold text-xl">1</div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Set Your Preferences</h3>
+                            <p class="text-sky-200">
+                                Tell us about your travel style, interests, and preferences through our intuitive onboarding.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex mb-8">
+                        <div class="mr-4">
+                            <div class="w-12 h-12 rounded-full bg-gold flex items-center justify-center text-navy font-bold text-xl">2</div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">AI Creates Your Itinerary</h3>
+                            <p class="text-sky-200">
+                                Our AI analyzes millions of data points to build your perfect luxury itinerary.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex">
+                        <div class="mr-4">
+                            <div class="w-12 h-12 rounded-full bg-gold flex items-center justify-center text-navy font-bold text-xl">3</div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Travel With Confidence</h3>
+                            <p class="text-sky-200">
+                                Enjoy your journey with real-time support and personalized adjustments along the way.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-light" id="testimonials">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-20 animate-on-scroll">
+                <h2 class="text-4xl font-bold text-navy mb-4">Trusted by Luxury Travelers</h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Discover why discerning travelers choose Voyager AI for their most important journeys.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white rounded-2xl p-8 shadow-lg border-2 border-transparent animate-on-scroll">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                                 alt="Sarah Johnson" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Sarah Johnson</h4>
+                            <p class="text-sky text-sm">Frequent Traveler</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "Voyager AI transformed our honeymoon into an absolute dream. The personalized recommendations were spot on, and the real-time assistance saved us when our flight was delayed."
+                    </p>
+                    <div class="flex text-gold">
+                        <ion-icon name="star" class="mr-1"></ion-icon>
+                        <ion-icon name="star" class="mr-1"></ion-icon>
+                        <ion-icon name="star" class="mr-1"></ion-icon>
+                        <ion-icon name="star" class="mr-1"></ion-icon>
+                        <ion-icon name="star" class="mr-1"></ion-icon>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white rounded-2xl p-8 shadow-lg border-2 border-transparent animate-on-scroll">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                                 alt="Michael Chen" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Michael Chen</h4>
+                            <p class="text-sky text-sm">Business Executive</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "As someone who travels constantly for work, Voyager AI has been a game-changer. The AI understands my preferences better than any human assistant ever could."
+                    </p>
+                    <div class="flex text-gold">
+                        <ion-icon name="star" class="mr-1"></ion-icon>
+                        <ion-icon name="star" class="mr-1"></ion-icon>
+                        <ion-icon name="star" class="mr-1"></ion-icon>
+                        <ion-icon name="star" class="mr-1"></ion-icon>
+                        <ion-icon name="star" class="mr-1"></ion-icon>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white rounded-2xl p-8 shadow-lg border-2 border-transparent animate-on-scroll">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                 alt="Robert Williams" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Robert Williams</h4>
+                            <p class="text-sky text-sm">Luxury Traveler</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "The exclusive experiences Voyager AI arranged for our anniversary trip were beyond anything we could have planned ourselves. Truly next-level service."
+                    </p>
+                    <div class="flex text-gold">
+                        <ion-icon name="star" class="mr-1"></ion-icon>
+                        <ion-icon name="star" class="mr-1"></ion-icon>
+                        <ion-icon name="star" class="mr-1"></ion-icon>
+                        <ion-icon name="star" class="mr-1"></ion-icon>
+                        <ion-icon name="star" class="mr-1"></ion-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 cta-gradient">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto animate-on-scroll">
+                <h2 class="text-4xl font-bold text-white mb-6">Ready for Smarter Luxury Travel?</h2>
+                <p class="text-xl text-sky-100 mb-10">
+                    Join thousands of discerning travelers who have transformed their journeys with AI-powered personalization.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <button class="bg-gold text-navy px-8 py-4 rounded-full font-bold text-lg hover:bg-gold-600 transition-colors flex items-center justify-center mx-auto glow">
+                        <span>Start Your Free Trial</span>
+                        <ion-icon name="arrow-forward" class="ml-2"></ion-icon>
+                    </button>
+                    <button class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-navy transition-colors flex items-center justify-center mx-auto">
+                        <ion-icon name="chatbox-ellipses" class="mr-2"></ion-icon>
+                        <span>Schedule a Demo</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-sky w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                            <ion-icon name="compass" class="text-white text-xl"></ion-icon>
+                        </div>
+                        <span class="text-2xl font-bold text-white">Voyager<span class="text-gold">AI</span></span>
+                    </div>
+                    <p class="text-sky-200 max-w-xs">
+                        Revolutionizing luxury travel through artificial intelligence and personalized service.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="font-bold text-lg mb-4">Company</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-sky-200 hover:text-gold transition-colors">About Us</a></li>
+                            <li><a href="#" class="text-sky-200 hover:text-gold transition-colors">Careers</a></li>
+                            <li><a href="#" class="text-sky-200 hover:text-gold transition-colors">Blog</a></li>
+                            <li><a href="#" class="text-sky-200 hover:text-gold transition-colors">Press</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-lg mb-4">Resources</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-sky-200 hover:text-gold transition-colors">Help Center</a></li>
+                            <li><a href="#" class="text-sky-200 hover:text-gold transition-colors">Partners</a></li>
+                            <li><a href="#" class="text-sky-200 hover:text-gold transition-colors">Community</a></li>
+                            <li><a href="#" class="text-sky-200 hover:text-gold transition-colors">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-lg mb-4">Connect</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-sky-200 hover:text-gold transition-colors">Twitter</a></li>
+                            <li><a href="#" class="text-sky-200 hover:text-gold transition-colors">Instagram</a></li>
+                            <li><a href="#" class="text-sky-200 hover:text-gold transition-colors">LinkedIn</a></li>
+                            <li><a href="#" class="text-sky-200 hover:text-gold transition-colors">Facebook</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-sky-900 mt-12 pt-8 text-center text-sky-300">
+                <p>© 2023 Voyager AI. All rights reserved. Revolutionizing luxury travel.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    navbar.classList.add('nav-scrolled');
+                    navbar.classList.remove('py-4');
+                    navbar.classList.add('py-3');
+                } else {
+                    navbar.classList.remove('nav-scrolled');
+                    navbar.classList.add('py-4');
+                    navbar.classList.remove('py-3');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
