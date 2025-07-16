@@ -1,5 +1,4 @@
-# Claude
-## Design Highlights:
+# Design Highlights:
 
 **Visual Excellence:**
 - Elegant hero section with parallax background from Unsplash
