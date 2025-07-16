@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aetheria | Your AI Travel Assistant</title>
+
+    <!-- Tailwind CSS & daisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Atkinson Hyperlegible -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Atkinson Hyperlegible', sans-serif;
+            background-color: #F9FAFB;
+        }
+        .deep-navy-bg { background-color: #1C2E4A; }
+        .deep-navy-text { color: #1C2E4A; }
+        .sky-blue-bg { background-color: #4A90E2; }
+        .sky-blue-text { color: #4A90E2; }
+        .luxury-gold-text { color: #D4AF37; }
+        .luxury-gold-border { border-color: #D4AF37; }
+        .luxury-gold-outline:hover { outline-color: #D4AF37; outline-style: solid; outline-width: 2px; outline-offset: 2px; }
+        
+        /* Animation Observer Class */
+        .hidden-anim {
+            opacity: 0;
+            transition: opacity 1s ease-out;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-transparent absolute top-0 left-0 w-full z-10 py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center">
+                <ion-icon name="paper-plane-outline" class="text-white text-3xl mr-2"></ion-icon>
+                <h1 class="text-2xl font-bold text-white">Aetheria</h1>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#features" class="text-white hover:luxury-gold-text transition-colors">Features</a>
+                <a href="#how-it-works" class="text-white hover:luxury-gold-text transition-colors">How It Works</a>
+                <a href="#testimonials" class="text-white hover:luxury-gold-text transition-colors">Testimonials</a>
+            </nav>
+            <a href="#pricing" class="btn bg-white text-deep-navy-text hover:bg-gray-200 luxury-gold-outline">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative deep-navy-bg text-white min-h-screen flex items-center">
+        <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?q=80&w=1966&auto=format&fit=crop');"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="hidden-anim animate__animated">
+                <h2 class="text-5xl md:text-7xl font-bold leading-tight mb-4">Travel Smarter, Not Harder.</h2>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto sky-blue-text">Let our AI craft your perfect, bespoke journey. From hidden gems to luxury stays, experience travel redefined.</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#pricing" class="btn btn-lg sky-blue-bg text-white border-none hover:bg-blue-500 luxury-gold-outline">Plan My Trip</a>
+                    <a href="#how-it-works" class="btn btn-lg btn-outline text-white hover:bg-white hover:text-deep-navy-text">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 hidden-anim animate__animated">
+                <h3 class="text-4xl font-bold deep-navy-text">Innovation at Your Fingertips</h3>
+                <p class="text-lg text-gray-600 mt-2">Everything you need for a seamless travel experience.</p>
+                <div class="w-24 h-1 bg-luxury-gold-text mx-auto mt-4"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-12 text-center">
+                <div class="hidden-anim animate__animated">
+                    <div class="flex justify-center items-center mb-4">
+                        <ion-icon name="sparkles-outline" class="text-5xl sky-blue-text"></ion-icon>
+                    </div>
+                    <h4 class="text-2xl font-bold deep-navy-text mb-2">Personalized Itineraries</h4>
+                    <p class="text-gray-600">Our AI understands your preferences to build unique travel plans, from dining to sightseeing.</p>
+                </div>
+                <div class="hidden-anim animate__animated">
+                    <div class="flex justify-center items-center mb-4">
+                        <ion-icon name="time-outline" class="text-5xl sky-blue-text"></ion-icon>
+                    </div>
+                    <h4 class="text-2xl font-bold deep-navy-text mb-2">Real-Time Flight Alerts</h4>
+                    <p class="text-gray-600">Stay updated with instant notifications on delays, gate changes, and cancellations.</p>
+                </div>
+                <div class="hidden-anim animate__animated">
+                    <div class="flex justify-center items-center mb-4">
+                        <ion-icon name="keypad-outline" class="text-5xl sky-blue-text"></ion-icon>
+                    </div>
+                    <h4 class="text-2xl font-bold deep-navy-text mb-2">24/7 Concierge</h4>
+                    <p class="text-gray-600">Need to book a last-minute table or find a local guide? Our AI assistant is always on standby.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 hidden-anim animate__animated">
+                <h3 class="text-4xl font-bold deep-navy-text">Effortless Planning in 3 Steps</h3>
+                <p class="text-lg text-gray-600 mt-2">Your dream vacation is just a few clicks away.</p>
+                <div class="w-24 h-1 bg-luxury-gold-text mx-auto mt-4"></div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
+                <!-- Step 1 -->
+                <div class="text-center max-w-xs hidden-anim animate__animated">
+                    <div class="relative mb-4">
+                        <div class="text-6xl font-bold luxury-gold-text opacity-20">01</div>
+                        <ion-icon name="chatbubbles-outline" class="text-5xl deep-navy-text absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></ion-icon>
+                    </div>
+                    <h4 class="text-xl font-bold deep-navy-text">Tell Us Your Dream</h4>
+                    <p class="text-gray-600">Describe your ideal trip, interests, and budget.</p>
+                </div>
+                <!-- Divider -->
+                <div class="hidden md:block w-24 h-px bg-gray-300 hidden-anim animate__animated"></div>
+                <!-- Step 2 -->
+                <div class="text-center max-w-xs hidden-anim animate__animated">
+                     <div class="relative mb-4">
+                        <div class="text-6xl font-bold luxury-gold-text opacity-20">02</div>
+                        <ion-icon name="options-outline" class="text-5xl deep-navy-text absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></ion-icon>
+                    </div>
+                    <h4 class="text-xl font-bold deep-navy-text">Review & Refine</h4>
+                    <p class="text-gray-600">Receive a custom AI-generated plan and tweak it to perfection.</p>
+                </div>
+                <!-- Divider -->
+                <div class="hidden md:block w-24 h-px bg-gray-300 hidden-anim animate__animated"></div>
+                <!-- Step 3 -->
+                <div class="text-center max-w-xs hidden-anim animate__animated">
+                     <div class="relative mb-4">
+                        <div class="text-6xl font-bold luxury-gold-text opacity-20">03</div>
+                        <ion-icon name="checkmark-done-outline" class="text-5xl deep-navy-text absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></ion-icon>
+                    </div>
+                    <h4 class="text-xl font-bold deep-navy-text">Book & Enjoy</h4>
+                    <p class="text-gray-600">Confirm your itinerary with one click and get ready to explore.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 hidden-anim animate__animated">
+                <h3 class="text-4xl font-bold deep-navy-text">Trusted by World Travelers</h3>
+                <p class="text-lg text-gray-600 mt-2">See what our users have to say about their experiences.</p>
+                <div class="w-24 h-1 bg-luxury-gold-text mx-auto mt-4"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card bg-gray-50 shadow-lg p-8 hidden-anim animate__animated">
+                    <p class="text-gray-700 mb-4">"Aetheria completely changed how I travel. The AI found a boutique hotel in Paris I would have never discovered on my own. It was magical!"</p>
+                    <div class="flex items-center">
+                        <div class="avatar">
+                            <div class="w-12 rounded-full ring ring-offset-base-100 ring-offset-2 luxury-gold-border">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop" />
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="font-bold deep-navy-text">Elena Rodriguez</p>
+                            <p class="text-sm text-gray-500">Luxury Blogger</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card bg-gray-50 shadow-lg p-8 hidden-anim animate__animated">
+                    <p class="text-gray-700 mb-4">"As a busy professional, I don't have time to plan complex trips. This app handled everything, from flights to dinner reservations. Flawless execution."</p>
+                    <div class="flex items-center">
+                        <div class="avatar">
+                            <div class="w-12 rounded-full ring ring-offset-base-100 ring-offset-2 luxury-gold-border">
+                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop" />
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="font-bold deep-navy-text">Marcus Chen</p>
+                            <p class="text-sm text-gray-500">Tech Entrepreneur</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card bg-gray-50 shadow-lg p-8 hidden-anim animate__animated md:col-span-2 lg:col-span-1">
+                    <p class="text-gray-700 mb-4">"The real-time alerts are a lifesaver. I avoided a massive delay on my trip to Tokyo thanks to an instant notification from Aetheria."</p>
+                    <div class="flex items-center">
+                        <div class="avatar">
+                            <div class="w-12 rounded-full ring ring-offset-base-100 ring-offset-2 luxury-gold-border">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop" />
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="font-bold deep-navy-text">Sophie Dubois</p>
+                            <p class="text-sm text-gray-500">Adventure Seeker</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 deep-navy-bg">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 hidden-anim animate__animated">
+                <h3 class="text-4xl font-bold text-white">Find Your Perfect Plan</h3>
+                <p class="text-lg sky-blue-text mt-2">Unlock a new era of intelligent travel today.</p>
+                <div class="w-24 h-1 bg-luxury-gold-text mx-auto mt-4"></div>
+            </div>
+            <div class="flex justify-center">
+                <div class="card lg:card-side bg-white shadow-xl max-w-4xl hidden-anim animate__animated">
+                  <div class="card-body p-10 md:p-12">
+                    <h2 class="card-title text-3xl deep-navy-text">Premium Access</h2>
+                    <p class="text-gray-600">Get unlimited access to all features, 24/7 support, and exclusive partner discounts.</p>
+                    <div class="my-6">
+                        <span class="text-5xl font-bold deep-navy-text">$29</span>
+                        <span class="text-gray-500">/ month</span>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><ion-icon name="checkmark-circle" class="text-green-500 mr-2"></ion-icon>Unlimited AI Itineraries</li>
+                        <li class="flex items-center"><ion-icon name="checkmark-circle" class="text-green-500 mr-2"></ion-icon>Real-Time Flight & Hotel Monitoring</li>
+                        <li class="flex items-center"><ion-icon name="checkmark-circle" class="text-green-500 mr-2"></ion-icon>24/7 AI Concierge Service</li>
+                        <li class="flex items-center"><ion-icon name="checkmark-circle" class="text-green-500 mr-2"></ion-icon>Exclusive Lounge & Partner Perks</li>
+                    </ul>
+                    <div class="card-actions justify-end mt-8">
+                      <button class="btn btn-lg sky-blue-bg text-white border-none hover:bg-blue-500 luxury-gold-outline w-full md:w-auto">Start Your Journey</button>
+                    </div>
+                  </div>
+                  <figure class="w-full lg:w-2/5 h-64 lg:h-auto">
+                    <img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?q=80&w=2070&auto=format&fit=crop" alt="Travel" class="w-full h-full object-cover"/>
+                  </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer p-10 bg-gray-800 text-neutral-content">
+      <nav>
+        <header class="footer-title luxury-gold-text">Services</header> 
+        <a class="link link-hover">AI Planning</a>
+        <a class="link link-hover">Flight Tracking</a>
+        <a class="link link-hover">Hotel Booking</a>
+        <a class="link link-hover">Concierge</a>
+      </nav> 
+      <nav>
+        <header class="footer-title luxury-gold-text">Company</header> 
+        <a class="link link-hover">About us</a>
+        <a class="link link-hover">Contact</a>
+        <a class="link link-hover">Careers</a>
+        <a class="link link-hover">Press</a>
+      </nav> 
+      <nav>
+        <header class="footer-title luxury-gold-text">Legal</header> 
+        <a class="link link-hover">Terms of use</a>
+        <a class="link link-hover">Privacy policy</a>
+        <a class="link link-hover">Cookie policy</a>
+      </nav>
+      <div class="md:place-self-center md:justify-self-end">
+        <div class="grid grid-flow-col gap-4">
+          <a><ion-icon name="logo-twitter" class="text-2xl hover:sky-blue-text transition-colors"></ion-icon></a>
+          <a><ion-icon name="logo-youtube" class="text-2xl hover:sky-blue-text transition-colors"></ion-icon></a>
+          <a><ion-icon name="logo-facebook" class="text-2xl hover:sky-blue-text transition-colors"></ion-icon></a>
+        </div>
+      </div>
+    </footer>
+
+
+    <script>
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('hidden-anim');
+                    if(entry.target.classList.contains('animate__animated')){
+                        // Determine animation based on element or add dynamically
+                        // For simplicity, using a generic fadeIn
+                        entry.target.classList.add('animate__fadeInUp');
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1 
+        });
+
+        document.querySelectorAll('.animate__animated').forEach(el => {
+            el.classList.add('hidden-anim');
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>
